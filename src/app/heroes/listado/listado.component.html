@@ -1,0 +1,35 @@
+<button (click)="borrarHeroe()">Borrar Heroe</button>
+
+
+<h3>listado Heroes</h3>
+
+<ul>
+    <li *ngFor=" let heroe of heroes, let i = index">
+        {{ i +1 }} {{ heroe }}
+    </li>
+</ul>
+<!--*ngIf e usa para uar unaiable y decidir si se muestra un template o no-->
+
+<!--<div *ngIf="heroeBorrado ? true : false">
+    <h3>Heróe Borrado</h3>
+    <span>{{heroeBorrado}}</span>
+</div> -->
+
+<!--Otra forma de definir una variable es con el uso deelse y ng template-->
+
+<div *ngIf="heroeBorrado; else noBorrado">
+    <h3>Heróe Borrado</h3>
+    <span>{{heroeBorrado}}</span>
+</div>
+
+<ng-template #noBorrado>
+    <h3>No Ha borrado</h3>
+</ng-template>
+
+<ul>
+    <li *ngFor=" let caballero of sayans, let i = index">
+        Nombre: <b>{{ caballero.nombre }}</b>
+        Signo: <b>{{ caballero.signo }}</b>
+        poder: <b>{{ caballero.poder}}</b>
+    </li>
+</ul>
